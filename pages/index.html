@@ -1,32 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-<link rel="stylesheet" href="./css/index.css">
-<!-- <link rel="stylesheet" href=""> -->
-</head>
-<body>
-  <h1>首页标题123</h1>
-  <div class="box">
-    <h2>一个标题2</h2>
-    <div class="show">
-      <span>一个span标签</span>
-      <p>段落内容。。。</p>
-    </div>
-  </div>
-  <a class="link" href="www.baidu.com">百度</a>
-  <div class="content">
-    <h1 class="content-title">content标题</h1>
-    <div class="content-main">content内容</div>
-  </div>
-  <ul class="list">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-  </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+  <body>
+    <!-- 头部开始 -->
+    <header>
+      <div class="content">
+        <nav class="nav-left">
+          <a href="javascript:;">考拉欢迎您</a>
+          <a href="javascript:;">登录</a>
+          <a href="javascript:;">免费注册</a>
+          <a href="javascript:;">手机考拉</a>
+        </nav>
+        <nav class="nav-right">
+          <a href="javascript:;">每日签到</a>
+          <a href="javascript:;">我的订单</a>
+          <a class="triangle" href="javascript:;">个人中心</a>
+          <a class="triangle" href="javascript:;">客户服务</a>
+          <a class="triangle" href="javascript:;">充值中心</a>
+          <a class="triangle" href="javascript:;">消费者权益</a>
+          <a class="triangle" href="javascript:;">更多</a>
+          <a href="javascript:;">视频内容</a>
+        </nav>
+      </div>
+    </header>
+    <!-- 头部结束 -->
 
-<script src="./js/index.js"></script>
-</body>
+    <!-- 搜索栏开始 -->
+    <section class="search content">
+      <h1>考拉海购</h1>
+      <div class="input-wrap">
+        <input type="text" placeholder="飞利浦" />
+        <img class="img-l" src="./img/search.png" alt="" />
+        <button></button>
+        <img class="img-r" src="./img/search.png" alt="" />
+      </div>
+      <div class="cart">
+        <img src="./img/02.png" alt="" />
+        <span>购物车</span>
+      </div>
+    </section>
+    <!-- 搜索栏结束 -->
+
+    <!-- 提示栏开始 -->
+    <nav class="tips content">
+      <a class="tips-red" href="javascript:;">首页</a>
+      <a href="javascript:;">海外直购</a>
+      <a href="javascript:;">工厂店</a>
+      <a href="javascript:;">品质奶粉</a>
+      <a href="javascript:;">人气面膜</a>
+      <a href="javascript:;">充值</a>
+    </nav>
+    <!-- 提示栏结束 -->
+
+    <!-- 轮播开始 -->
+    <section class="swiper-wrap">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image: url(./img/banner-1.jpg)"></div>
+          <div class="swiper-slide" style="background-image: url(./img/banner-2.png)"></div>
+          <div class="swiper-slide" style="background-image: url(./img/banner-3.png)"></div>
+        </div>
+      </div>
+      <div class="tab-list">
+        <!-- 轮播分页器 -->
+        <p class="swiper-pagination"></p>
+        <!-- 轮播导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <!-- nav导航栏 -->
+        <div class="tab-dist">
+          <nav class="tab">
+            <p>
+              <img src="./img/3.png" alt="" />
+              <span>所有分类</span>
+            </p>
+            <a href="javascript:;">
+              <img src="./img/3.png" alt="" />
+              <span>美容彩妆</span>
+              <img src="./img/3.png" alt="" />
+            </a>
+            <a href="javascript:;">
+              <img src="./img/3.png" alt="" />
+              <span>美容彩妆</span>
+              <img src="./img/3.png" alt="" />
+            </a>
+            <a href="javascript:;">美容彩妆</a>
+            <a href="javascript:;">美容彩妆</a>
+            <a href="javascript:;">美容彩妆</a>
+            <a href="javascript:;">美容彩妆</a>
+            <a href="javascript:;">美容彩妆</a>
+            <a href="javascript:;">美容彩妆</a>
+            <a href="javascript:;">美容彩妆</a>
+            <a href="javascript:;">美容彩妆</a>
+            <a href="javascript:;">美容彩妆</a>
+            <a href="javascript:;">美容彩妆</a>
+          </nav>
+          <section class="tab-detail">
+            <div class="detail-left">
+              <div>
+                <h3>护肤</h3>
+                <p>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                </p>
+              </div>
+              <div>
+                <h3>护肤</h3>
+                <p>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                </p>
+              </div>
+              <div>
+                <h3>护肤</h3>
+                <p>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                  <span>洁面</span>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="shadow-wrap">
+        <div class="swiper-shadow content">
+          <ul class="clearfix">
+            <li>
+              <img src="./img/3.png" alt="" />
+              <span>考拉自营</span>
+            </li>
+            <li>
+              <img src="./img/3.png" alt="" />
+              <span>考拉自营</span>
+            </li>
+            <li>
+              <img src="./img/3.png" alt="" />
+              <span>考拉自营</span>
+            </li>
+            <li>
+              <img src="./img/3.png" alt="" />
+              <span>考拉自营</span>
+            </li>
+          </ul>
+          <div>
+            <img src="./img/3.png" alt="" />
+            <span>新人下载APP,领10元满减红包</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 轮播结束 -->
+
+    <!-- 推荐栏开始 -->
+    <section class="recommend content"></section>
+    <!-- 推荐栏结束 -->
+
+    <!-- 左右导航条开始 -->
+    <article class="tips-nav">
+      <aside class="left-side"></aside>
+      <aside class="right-side"></aside>
+    </article>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <p>5</p>
+    <p>6</p>
+    <p>7</p>
+    <p>8</p>
+    <p>9</p>
+    <p>10</p>
+    <p>11</p>
+    <p>12</p>
+    <p>13</p>
+    <p>14</p>
+    <p>15</p>
+    <p>16</p>
+    <p>17</p>
+    <p>18</p>
+    <p>19</p>
+    <p>20</p>
+    <p>21</p>
+    <p>22</p>
+    <p>23</p>
+    <p>24</p>
+    <p>25</p>
+    <p>26</p>
+    <p>27</p>
+    <p>28</p>
+    <p>29</p>
+    <p>30</p>
+    <p>31</p>
+    <p>32</p>
+    <p>33</p>
+    <p>34</p>
+    <p>35</p>
+    <p>36</p>
+    <p>37</p>
+    <p>38</p>
+    <p>39</p>
+    <p>40</p>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <p>5</p>
+    <p>6</p>
+    <p>7</p>
+    <p>8</p>
+    <p>9</p>
+    <p>10</p>
+    <p>11</p>
+    <p>12</p>
+    <p>13</p>
+    <p>14</p>
+    <p>15</p>
+    <p>16</p>
+    <p>17</p>
+    <p>18</p>
+    <p>19</p>
+    <p>20</p>
+    <p>21</p>
+    <p>22</p>
+    <p>23</p>
+    <p>24</p>
+    <p>25</p>
+    <p>26</p>
+    <p>27</p>
+    <p>28</p>
+    <p>29</p>
+    <p>30</p>
+    <p>31</p>
+    <p>32</p>
+    <p>33</p>
+    <p>34</p>
+    <p>35</p>
+    <p>36</p>
+    <p>37</p>
+    <p>38</p>
+    <p>39</p>
+    <p>40</p>
+    <!-- 左右导航条结束 -->
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
 </html>
