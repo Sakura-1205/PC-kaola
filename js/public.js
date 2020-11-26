@@ -4,14 +4,15 @@ function backToTop(ele) {
     let zin = getComputedStyle(ele).zIndex || 0
     ele.style.zIndex = -1
     let timer = setInterval(() => {
-      document.documentElement.scrollTop -= 100
+      document.documentElement.scrollTop -= 60
       if (document.documentElement.scrollTop <= 0) {
         clearInterval(timer)
         ele.style.zIndex = zin
       }
-    }, 15)
+    }, 20)
   }
 }
+
 const header = `
       <div class="content">
         <nav class="nav-left">
@@ -150,7 +151,9 @@ function createEle() {
   document.querySelector('.copyright-wrap') && (document.querySelector('.copyright-wrap').innerHTML = copyright)
   document.querySelector('.tips').innerHTML && (document.querySelector('.tips').innerHTML = tips)
 }
-createEle()
+try {
+  createEle()
+} catch (error) {}
 // export { createEle }
 /* 公共的头部尾部需要在HTML中写入以下标签,并引入JS文件
  * <header id="header"></header>

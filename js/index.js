@@ -73,19 +73,7 @@ function buttonActive() {
     buttonNext.style.display = 'none'
   })
 }
-function tabDetailActive() {
-  tabAs.forEach((a, key) => {
-    a.onmouseenter = function () {
-      tabDetail.style.display = 'block'
-      tabDetail.style.display = 'block'
-      // 同时改变数据
-    }
-  })
-  tabDist.addEventListener('mouseleave', function (e) {
-    tabDetail.style.display = 'none'
-    tabDetail.style.display = 'none'
-  })
-}
+
 // // 动态生成轮播图组件
 // function swiperNum() {
 

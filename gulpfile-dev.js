@@ -10,12 +10,15 @@ task('delDist', async () => {
 
 // 处理图片
 task('img', async () => {
+  src('./img/cart/*.*', { base: './img/cart' }).pipe(dest('./dist/img')).pipe(load.connect.reload())
+  src('./img/index/*.*', { base: './img/index' }).pipe(dest('./dist/img')).pipe(load.connect.reload())
+  src('./img/login/*.*', { base: './img/login' }).pipe(dest('./dist/img')).pipe(load.connect.reload())
   src('./img/*.*').pipe(dest('./dist/img')).pipe(load.connect.reload())
 })
 
 // 处理JS
 task('script', async () => {
-  src('./js/*.js')
+  src('./js/**/*.js')
     .pipe(load.babel({ presets: ['@babel/env'] }))
     .pipe(dest('./dist/js'))
     .pipe(load.connect.reload())
@@ -28,7 +31,7 @@ task('html', async () => {
 
 // 编译sass
 task('sass', async () => {
-  src('./sass/*.scss')
+  src('./sass/**/*.scss')
     .pipe(load.sassChina()) // 把sass转成css
     .pipe(dest('./dist/css'))
     .pipe(load.connect.reload())
