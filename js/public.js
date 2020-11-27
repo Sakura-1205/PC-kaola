@@ -13,12 +13,28 @@ function backToTop(ele) {
   }
 }
 
+// 取用户信息的函数
+function getInfo(info, key) {
+  return localStorage.getItem(info) && JSON.parse(localStorage.getItem(info))[key]
+}
+let uname = getInfo('userInfo', 'uname')
+let str = ''
+if (uname) {
+  str = `
+  <a href="javascript:;">您好，${uname}</a>
+  <a class="login-out" href="javascript:;">退出</a>
+`
+} else {
+  str = `
+  <a href="javascript:;">考拉欢迎您</a>
+  <a href="http://localhost:3000/login.html">登录</a>
+  <a href="javascript:;">免费注册</a>
+`
+}
 const header = `
       <div class="content">
         <nav class="nav-left">
-          <a href="javascript:;">考拉欢迎您</a>
-          <a href="javascript:;">登录</a>
-          <a href="javascript:;">免费注册</a>
+          ${str}
           <a href="javascript:;">手机考拉</a>
         </nav>
         <nav class="nav-right">
@@ -150,10 +166,16 @@ function createEle() {
   document.querySelector('#footer') && (document.querySelector('#footer').innerHTML = footer)
   document.querySelector('.copyright-wrap') && (document.querySelector('.copyright-wrap').innerHTML = copyright)
   document.querySelector('.tips').innerHTML && (document.querySelector('.tips').innerHTML = tips)
+  // 退出功能
+  document.querySelector('.login-out').addEventListener('click', function () {
+    localStorage.removeItem('userInfo')
+    history.go(0)
+  })
 }
 try {
   createEle()
 } catch (error) {}
+
 // export { createEle }
 /* 公共的头部尾部需要在HTML中写入以下标签,并引入JS文件
  * <header id="header"></header>

@@ -19,6 +19,8 @@
       right: -50px;
       width: 34px;
       height: 100px;
+      box-sizing: border-box;
+      padding: 0 10px;
       background: #fff;
       cursor: pointer;
     }
@@ -41,6 +43,93 @@ main {
       a {
         color: #d42147;
       }
+    }
+  }
+  .has-signin {
+    .signin-title {
+      display: flex;
+      align-items: center;
+      line-height: 36px;
+      padding: 0 20px;
+      input {
+        margin-right: 10px;
+      }
+      .sp1 {
+        width: 60px;
+        margin-left: 80px;
+      }
+      .sp2 {
+        width: 340px;
+        margin-left: 20px;
+      }
+      .sp3 {
+        width: 115px;
+      }
+      .sp4 {
+        width: 180px;
+      }
+      .sp5 {
+        width: 100px;
+      }
+      .sp6 {
+        width: 50px;
+      }
+    }
+    .goods-list {
+      .goods-item {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        height: 122px;
+        padding: 20px;
+        border: 1px solid #eaeaea;
+        background: #fffbf0;
+        margin-bottom: 30px;
+        .goods-check {
+          margin-right: 10px;
+        }
+        img {
+          width: 80px;
+          height: 80px;
+        }
+        .goods-title {
+          width: 450px;
+          margin-left: 20px;
+        }
+        .goods-price {
+          width: 150px;
+          text-align: center;
+        }
+        .goods-count {
+          display: flex;
+          width: 250px;
+          align-items: center;
+          div {
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            border: 1px solid #bcbcbc;
+            text-align: center;
+          }
+          input {
+            width: 44px;
+            height: 22px;
+            border: 1px solid #bcbcbc;
+            text-align: center;
+            outline: none;
+          }
+        }
+        .totalprice {
+          width: 110px;
+        }
+        .goods-remove {
+          width: 140px;
+        }
+      }
+    }
+    .all-price {
+      font-size: 16px;
+      text-align: right;
     }
   }
 }

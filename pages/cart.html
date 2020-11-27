@@ -16,9 +16,39 @@
     <header id="header"></header>
     <section class="logo content"></section>
     <main class="content">
-      <section class="not-signin">
+      <!-- <section class="not-signin">
         <p>购物车空空如也,赶紧去 <a href="javascript:;">逛逛吧></a></p>
         <p>或者您可以先进行 <a href="javascript:;">登录></a></p>
+      </section> -->
+
+      <section class="has-signin">
+        <h3>我的购物车 <span v-bind="goods-num" class="all-num-inner">2</span></h3>
+        <p class="signin-title">
+          <input type="checkbox" /> 全选
+          <span class="sp1">商品信息</span>
+          <span class="sp2"></span>
+          <span class="sp3">单价(元)</span>
+          <span class="sp4">数量</span>
+          <span class="sp5">金额(元)</span>
+          <span class="sp6">操作</span>
+        </p>
+        <nav class="goods-list">
+          <div class="goods-item">
+            <input class="goods-check" type="checkbox" />
+            <img src="./img/med.jpg" alt="" />
+            <p class="goods-title">【2件装】Kao 花王 Curel 保湿面霜 40克</p>
+            <p class="goods-price">239</p>
+            <div class="goods-count">
+              <div class="count-des">-</div>
+              <input class="goods-num" type="text" value="1" />
+              <div class="count-add">+</div>
+            </div>
+            <div v-bind="totalprice" class="totalprice">239</div>
+            <div class="goods-remove">删除</div>
+          </div>
+        </nav>
+        <div class="all-num">共计<span v-bind="goods-num" class="all-num-inner"></span>件</div>
+        <div class="all-price">商品总价: ￥<span class="all-price-inner"></span></div>
       </section>
     </main>
     <section class="user-like content">
@@ -67,5 +97,6 @@
     </section>
   </body>
   <script src="./js/public.js"></script>
+  <script src="./js/ajax.js"></script>
   <script src="./js/cart.js"></script>
 </html>

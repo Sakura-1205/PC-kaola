@@ -4,9 +4,11 @@
  * 统一获取元素
  */
 // createEle()
+
 // 搜索栏
 let search = document.querySelector('.search')
 let stickySearch = document.querySelector('.sticky-search-wrap')
+
 // 轮播区域元素
 let swiperWrap = document.querySelector('.swiper-wrap')
 let swiperSlide = document.querySelector('.swiper-slide')
