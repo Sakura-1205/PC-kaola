@@ -1,82 +1,162 @@
-// import { createEle } from './public.js'
-// import { mySwiper, rightSwiper, hotSwiper } from './myswiper.js'
-/*
- * 统一获取元素
- */
-// createEle()
+// document.querySelector('h1').onclick = function (){
+//   alert(123);
+// };
 
-// 搜索栏
-let search = document.querySelector('.search')
-let stickySearch = document.querySelector('.sticky-search-wrap')
+window.addEventListener('load', function () {
 
-// 轮播区域元素
-let swiperWrap = document.querySelector('.swiper-wrap')
-let swiperSlide = document.querySelector('.swiper-slide')
-let buttonPrev = document.querySelector('.swiper-button-prev')
-let buttonNext = document.querySelector('.swiper-button-next')
-let tabDetail = document.querySelector('.tab-detail')
-let tabDist = document.querySelector('.tab-dist')
-let tab = document.querySelector('.tab')
-let tabAs = document.querySelectorAll('.tab > a')
-// 左右导航元素
-let tipsNav = document.querySelector('.tips-nav')
-let backTop = document.querySelector('.back-top')
 
-/*
- * 左右导航部分
- */
+  //头部导航栏,下拉菜单
 
-// 控制左右控制按钮显示隐藏
-buttonActive()
+  //大盒子委托对象
+  let box = document.querySelector('#topNavRight')
+  //下拉li
+  let pullDown = document.querySelectorAll('.pullDown')
+  //小三角
+  let trans = document.querySelectorAll('.red1 > i')
 
-// 返回顶部
-backToTop(backTop)
-
-/*
- * 顶部搜索栏
- * 吸顶效果
- */
-
-// 控制tab详情显示隐藏
-tabDetailActive()
-
-// 控制tipsnav吸顶
-tipsNavFixed()
-// 动态生成轮播图组件
-// swiperNum()
-
-function tipsNavFixed() {
-  window.addEventListener('scroll', function (e) {
-    // console.log(window.pageYOffset)
-    if (window.pageYOffset > 55) {
-      search.style.visibility = 'hidden'
-      stickySearch.style.visibility = 'visible'
-    } else {
-      search.style.visibility = 'visible'
-      stickySearch.style.visibility = 'hidden'
-    }
-    if (window.pageYOffset >= 620) {
-      tipsNav.style.position = 'fixed'
-      tipsNav.style.top = '75px'
-    } else {
-      tipsNav.style.position = 'absolute'
-      tipsNav.style.top = '695px'
+  box.addEventListener('mouseover', function (e) {
+    let target = e.target
+    if (target.className == 'pullDown') {
+      target.children[1].style.display = 'block'
+      target.children[0].children[0].className = 'trans'
+      target.addEventListener('mouseleave', function () {
+        this.children[1].style.display = 'none'
+        this.children[0].children[0].className = ''
+      })
     }
   })
-}
 
-function buttonActive() {
-  swiperWrap.addEventListener('mouseover', function () {
-    buttonPrev.style.display = 'block'
-    buttonNext.style.display = 'block'
+  //吸顶效果
+
+  function getScrollTop() {
+    var scrollTop = 0
+    if (document.documentElement && document.documentElement.scrollTop) {
+      scrollTop = document.documentElement.scrollTop
+    } else if (document.body) {
+      scrollTop = document.body.scrollTop
+    }
+
+    return scrollTop
+  }
+
+  let nav_dom = document.querySelector('#docHead')
+
+  //换logo
+  let logo = document.querySelector('#docHeadWrap > a')
+
+  //左侧导航
+  let indexleft = document.querySelector('#indexleft')
+  //右侧导航
+  let rightBarNew = document.querySelector('#rightBarNew')
+
+
+
+  window.addEventListener('scroll', function () {
+    if (getScrollTop() > 50) {
+      nav_dom.classList.add('fix')
+      indexleft.style.top = '670px'
+      rightBarNew.style.top = '670px'
+    } else {
+      nav_dom.classList.remove('fix')
+      indexleft.style.top = '772px'
+      rightBarNew.style.top = '772px'
+    }
+
+    //  两侧导航栏定位
+    if (getScrollTop() > 600) {
+      indexleft.style.top = '66px'
+      indexleft.style.position = 'fixed'
+      rightBarNew.style.top = '66px'
+      rightBarNew.style.position = 'fixed'
+    } else {
+      indexleft.style.top = '670px'
+      indexleft.style.position = 'absolute'
+      rightBarNew.style.top = '670px'
+      rightBarNew.style.position = 'absolute'
+      if (getScrollTop() < 50) {
+        indexleft.style.top = '772px'
+        rightBarNew.style.top = '772px'
+      }
+    }
   })
-  swiperWrap.addEventListener('mouseleave', function () {
-    buttonPrev.style.display = 'none'
-    buttonNext.style.display = 'none'
+
+
+
+  // 分类划入改变颜色
+  let ul = document.querySelector('#funcTab')
+
+  ul.addEventListener('mouseover', function (e) {
+    let target = e.target
+    if (target.nodeName == 'A') {
+      target.className = 'red'
+      target.addEventListener('mouseleave', function (e) {
+        this.className = ''
+      })
+    }
   })
-}
 
-// // 动态生成轮播图组件
-// function swiperNum() {
+  //二级菜单显示隐藏
 
-// }
+  let list = document.querySelector('#list')
+
+  list.addEventListener('mouseover', function (e) {
+    let target = e.target
+    if (target.nodeName == 'LI') {
+      /* target.style.background = '#fff'
+      target.children[0].classList.add('iconhv')
+      target.children[1].style.display = 'inline-block'
+      target.children[2].classList.add('bgr') */
+      target.classList.add('z-hover')
+      target.lastElementChild.style.display = 'block'
+      //移出
+      target.addEventListener('mouseleave', function (e) {
+        /* this.style.background = ''
+        this.children[0].classList.remove('iconhv')
+        this.children[1].style.display = 'none'
+        this.children[2].classList.remove('bgr') */
+        this.classList.remove('z-hover')
+        this.lastElementChild.style.display = 'none'
+
+      })
+    }
+
+  })
+
+  //滑动显示小红心 
+  let redBox = document.querySelector('.brandListContainer')
+
+  redBox.addEventListener('mouseover', function (e) {
+    let target = e.target
+    if (target.nodeName == 'A') {
+      target.children[1].style.display = 'block'
+      target.addEventListener('mouseleave', function (e) {
+        this.children[1].style.display = 'none'
+      })
+    }
+  })
+
+  //轮播图
+  var mySwiper = new Swiper('.swiper-container', {
+    effect: 'fade', // 垂直切换选项
+    loop: true, // 循环模式选项
+    autoplay: true,
+    // 如果需要分页器
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+    // 如果需要前进后退按钮
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // 如果需要滚动条
+    /* scrollbar: {
+      el: '.swiper-scrollbar',
+    }, */
+  })
+
+
+
+})
